@@ -41,9 +41,9 @@ def scan_and_process_folder(app):
 
             try:
                 with app.app_context():
-                    df = extract(file_path)
-                    df = transform(df)
-                    load(df)
+                    for chunk in extract(file_path):
+                        chunk = transform(chunk)
+                        load(chunk)
 
                 rename_file_to_processed(original_path=file_path)
 
