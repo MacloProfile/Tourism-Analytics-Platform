@@ -38,7 +38,7 @@ docker-compose up --build
 - Python 3.10  
 - Flask  
 - SQLAlchemy  
-- PostgreSQL 15  
+- PostgreSQL 15 (Managed Service for PostgreSQL, Yandex Cloud)
 - Docker / Docker Compose  
 - SQL  
 - Swagger UI  
