@@ -1,0 +1,139 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Tourism Analytics API",
+    "version": "1.0.0",
+    "description": "Analytics backend for tourism research"
+  },
+
+  "paths": {
+
+    "/api/tourists": {
+      "get": {
+        "summary": "Получить количество туристов за период",
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "2021-01-01"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "2021-06-01"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "example": {
+                  "start": "2021-01-01",
+                  "end": "2021-06-01",
+                  "total_tourists": 383906
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/api/regions": {
+      "get": {
+        "summary": "Распределение туристов по регионам",
+        "responses": {
+          "200": {
+            "description": "Region statistics",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "region": "Нижегородская область",
+                    "total": 320344
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/api/demographics": {
+      "get": {
+        "summary": "Демографический профиль туристов",
+        "responses": {
+          "200": {
+            "description": "Demographic statistics",
+            "content": {
+              "application/json": {
+                "example": {
+                  "average_age": 42.36,
+                  "gender_distribution": [
+                    {
+                      "gender": "женский",
+                      "total": 242411
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/api/kpi": {
+      "get": {
+        "summary": "Получить KPI аналитики",
+        "responses": {
+          "200": {
+            "description": "KPI JSON analytics",
+            "content": {
+              "application/json": {
+                "example": {
+                  "total_tourists": 479138,
+                  "average_profile": {
+                    "avg_age": 42.36,
+                    "avg_expenses_mln": 0.049,
+                    "most_common_gender": "женский"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/api/kpi/recalculate": {
+      "post": {
+        "summary": "Пересчитать KPI по базе данных",
+        "responses": {
+          "200": {
+            "description": "Recalculated KPI",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "success",
+                  "message": "kpi recalculated"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

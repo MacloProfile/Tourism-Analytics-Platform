@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  backend:
+    build: .
+    container_name: tourism_backend
+    restart: always
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./data/raw:/app/data/raw
+
+    ports:
+      - "5000:5000"
