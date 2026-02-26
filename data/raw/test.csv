@@ -1,0 +1,2 @@
+TERRITORY_CODE,TERRITORY_NAME,DATE_OF_ARRIVAL,TRIP_TYPE,VISIT_TYPE,HOME_COUNTRY,HOME_REGION,HOME_CITY,GOAL,GENDER,AGE,INCOME,DAYS_CNT,VISITORS_CNT,SPENT
+22701000,город Нижний Новгород,2021-01-19,Поездка внутри страны,Турист,Россия,Нижегородская область,Сосновский муниципальный район,Туризм,женский,от 25 до 34 лет,от 30 до 50 тыс. руб.,18,4,0.13650766066813413
